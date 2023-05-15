@@ -42,6 +42,16 @@ while executando:
                                               (botao_posicao_x + 30, botao_posicao_y + 80),
                                               (botao_posicao_x + 80, botao_posicao_y + 50)])
 
+    
+    font = pygame.font.Font(None, 80)  # Define a fonte e o tamanho
+    text = font.render("PYGAME", True, (0, 0, 0))  # Renderiza o texto
+    text_rect = text.get_rect(center=(janela.get_width() // 2, janela.get_height() // 2 -100))  # Obtém o retângulo do texto
+    janela.blit(text, text_rect)  # Desenha o texto na tela
+    font = pygame.font.Font(None, 60)  # Define a fonte e o tamanho
+    text = font.render("Inicio", True, (0, 0, 0))  # Renderiza o texto
+    text_rect = text.get_rect(center=(janela.get_width() // 2, janela.get_height() // 2 + 100))  # Obtém o retângulo do texto
+    janela.blit(text, text_rect)  # Desenha o texto na tela
+
     pygame.display.update()
 
 # Encerrando o Pygame

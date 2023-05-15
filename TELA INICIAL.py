@@ -1,3 +1,4 @@
+# ----- Importa e inicia pacotes
 import pygame
 
 pygame.init()
@@ -19,18 +20,23 @@ while game:
 
     # ----- Gera saídas
     window.fill((229, 35, 151))  # Preenche com a cor branca
-
-    # ----- Desenha a frase
-    font = pygame.font.Font(None, 70)  # Define a fonte e o tamanho
-    text = font.render("PYGAME", True, (255, 255, 255))  # Renderiza o texto
-    text_rect = text.get_rect(center=(window.get_width() // 2, window.get_height() // 2-50))  # Obtém o retângulo do texto
-    window.blit(text, text_rect)  # Desenha o texto na tela
-
-    font = pygame.font.Font(None, 40)  # Define a fonte e o tamanho
-    texto = font.render("iniciar", True, (255, 255, 255))  # Renderiza o texto
-    texto_rect = texto.get_rect(center=(window.get_width() // 2, window.get_height() // 2+50))  # Obtém o retângulo do texto
-    window.blit(texto, texto_rect)  # Desenha o texto na tel
-
+    
+    # ----- Desenha o quadrado branco
+    cor_quadrado = (255, 255, 255)  # Cor do quadrado branco
+    tamanho_quadrado = 150  # Tamanho do quadrado branco
+    x_quadrado = window.get_width() // 2 - tamanho_quadrado // 2  # Posição X para centralizar o quadrado branco
+    y_quadrado = window.get_height() // 2 - tamanho_quadrado // 2  # Posição Y para centralizar o quadrado branco
+    
+    pygame.draw.rect(window, cor_quadrado, pygame.Rect(x_quadrado, y_quadrado, tamanho_quadrado, tamanho_quadrado))
+    
+    # ----- Desenha o triângulo preto
+    cor_triangulo = (0, 0, 0)  # Cor preta para o triângulo
+    tamanho_triangulo = 100  # Tamanho do triângulo
+    x_triangulo = window.get_width() // 2 - tamanho_triangulo // 2  # Posição X para centralizar o triângulo
+    y_triangulo = y_quadrado + tamanho_quadrado // 2  # Posição Y abaixo do quadrado branco
+    
+    pygame.draw.polygon(window, cor_triangulo, [(x_triangulo, y_triangulo + tamanho_triangulo), (x_triangulo, y_triangulo), (x_triangulo + tamanho_triangulo, y_triangulo + tamanho_triangulo // 2)])
+    
     # ----- Atualiza estado do jogo
     pygame.display.update()  # Mostra o novo frame para o jogador
 
