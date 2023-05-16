@@ -48,7 +48,7 @@ while executando:
     text_rect = text.get_rect(center=(janela.get_width() // 2, janela.get_height() // 2 -100))  # Obtém o retângulo do texto
     janela.blit(text, text_rect)  # Desenha o texto na tela
     font = pygame.font.Font(None, 60)  # Define a fonte e o tamanho
-    text = font.render("Inicio", True, (0, 0, 0))  # Renderiza o texto
+    text = font.render("Início", True, (0, 0, 0))  # Renderiza o texto
     text_rect = text.get_rect(center=(janela.get_width() // 2, janela.get_height() // 2 + 100))  # Obtém o retângulo do texto
     janela.blit(text, text_rect)  # Desenha o texto na tela
 
