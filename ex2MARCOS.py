@@ -6,7 +6,7 @@ pygame.init()
 
 # ----- Gera tela principal
 window = pygame.display.set_mode((500, 400))
-pygame.display.set_caption('Hello World!')
+pygame.display.set_caption('Jogo do Marcos')
 
 # ----- Inicia estruturas de dados
 game = True
@@ -20,10 +20,14 @@ while game:
             game = False
 
     # ----- Gera saídas
-    window.fill((255, 255, 255))  # Preenche com a cor branca
-    cor = (255, 0, 0)
+    window.fill((0, 255, 0))  # Preenche com a cor branca
+    cor = (255, 255, 0)
     vertices = [(250, 0), (500, 200), (250, 400), (0, 200)]
     pygame.draw.polygon(window, cor, vertices)
+    color = (0,0,255)
+    centro = (250,200)
+    raio = 100
+    pygame.draw.circle(window,color,centro,raio)
 
     # ----- Atualiza estado do jogo
     pygame.display.update()  # Mostra o novo frame para o jogador
